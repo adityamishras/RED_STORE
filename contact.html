@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Shopcart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e362ff8530.js"></script>
+    <link rel="shortcut icon" href="images/adilogo.png" type="image/x-icon" />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class", // Enables dark mode based on the 'dark' class on the HTML tag
+        theme: {
+          extend: {
+            colors: {
+              "primary-red": "#FF4545", // Bright red for accents
+              "dark-bg": "#1a202c", // Dark background for dark mode
+              "dark-card": "#2d3748", // Card background in dark mode
+              "light-bg": "#f7fafc", // Light background
+              "light-card": "#ffffff", // Card background in light mode
+            },
+            animation: {
+              "fade-in-up": "fade-in-up 0.6s ease-out",
+            },
+            keyframes: {
+              "fade-in-up": {
+                "0%": { opacity: "0", transform: "translateY(10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Apply smooth transitions for color changes */
+      body {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .dark .text-gray-900 {
+        color: white;
+      }
+      /* Custom styles for mobile menu transition */
+      #Menuitem {
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-light-bg dark:bg-dark-bg text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col"
+  >
+    <header
+      class="sticky top-0 z-50 shadow-md bg-white dark:bg-dark-card transition duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex-shrink-0">
+            <img
+              src="images/logo.png"
+              alt="Shopcart Logo"
+              class="h-8 w-auto filter dark:invert"
+            />
+          </div>
+
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-red transition duration-300 font-medium"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Products.html"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-red transition duration-300 font-medium"
+                  >Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-red transition duration-300 font-medium"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-primary-red font-bold transition duration-300"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="signup.html"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-red transition duration-300 font-medium"
+                  >Account</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="flex items-center space-x-4">
+            <a href="cart.html" class="relative">
+              <i
+                class="fas fa-shopping-cart text-xl text-gray-600 dark:text-gray-300 hover:text-primary-red transition duration-300"
+              ></i>
+            </a>
+
+            <button
+              id="darkModeToggle"
+              class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 focus:outline-none"
+            >
+              <i
+                class="fas fa-moon text-xl text-gray-600 dark:text-gray-300 dark:block hidden"
+              ></i>
+              <i
+                class="fas fa-sun text-xl text-gray-600 dark:text-gray-300 dark:hidden block"
+              ></i>
+            </button>
+
+            <button id="toggleMenu" class="md:hidden focus:outline-none">
+              <i
+                class="fas fa-bars text-xl text-gray-600 dark:text-gray-300"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="Menuitem" class="md:hidden" style="max-height: 0px">
+        <ul
+          class="flex flex-col space-y-2 p-4 bg-white dark:bg-dark-card border-t border-gray-200 dark:border-gray-700"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-red"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="Products.html"
+              class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-red"
+              >Product</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-red"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="block py-2 text-primary-red font-bold"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="signup.html"
+              class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-red"
+              >Account</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <section class="py-12 text-center">
+        <h1
+          class="text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-3 animate-fade-in-up"
+        >
+          Get In Touch
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          We'd love to hear from you. Reach out through the form below or find
+          our details.
+        </p>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div
+            class="lg:col-span-1 space-y-8 p-6 bg-white dark:bg-dark-card rounded-xl shadow-lg h-full"
+          >
+            <h2
+              class="text-2xl font-bold border-b-2 border-primary-red pb-2 mb-4"
+            >
+              Contact Details
+            </h2>
+
+            <div class="flex items-start space-x-4">
+              <i
+                class="fas fa-map-marker-alt text-2xl text-primary-red mt-1"
+              ></i>
+              <div>
+                <h3 class="font-semibold text-lg">Our Headquarters</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  Shopcart Global HQ,<br />
+                  123 Ecom Street, Suite 400,<br />
+                  Tech City, 90210
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-envelope text-2xl text-primary-red mt-1"></i>
+              <div>
+                <h3 class="font-semibold text-lg">Email Support</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  <a
+                    href="mailto:support@shopcart.com"
+                    class="hover:text-primary-red transition duration-300"
+                    >support@shopcart.com</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-phone-alt text-2xl text-primary-red mt-1"></i>
+              <div>
+                <h3 class="font-semibold text-lg">Phone Number</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  <a
+                    href="tel:+919876543210"
+                    class="hover:text-primary-red transition duration-300"
+                    >+91 987 654 3210</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-2 p-6 bg-white dark:bg-dark-card rounded-xl shadow-lg"
+          >
+            <h2
+              class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6"
+            >
+              Send us a Message
+            </h2>
+            <form action="#" method="POST" class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Full Name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-red focus:border-primary-red bg-white dark:bg-gray-700 dark:text-gray-100 transition duration-300"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your.email@example.com"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-red focus:border-primary-red bg-white dark:bg-gray-700 dark:text-gray-100 transition duration-300"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="What can we help you with?"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-red focus:border-primary-red bg-white dark:bg-gray-700 dark:text-gray-100 transition duration-300"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-3 px-4 rounded-lg shadow-md text-base font-medium text-white bg-primary-red hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-red transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-10"
+        >
+          Find Our Location
+        </h2>
+
+        <div
+          class="relative h-[450px] md:h-[500px] w-full overflow-hidden rounded-2xl shadow-xl ring-2 ring-gray-200 dark:ring-gray-700"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d282887.4482726876!2d72.87866902292443!3d19.059103806619124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1761971832590!5m2!1sen!2sin"
+            class="absolute inset-0 w-full h-full"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          <!-- Optional overlay for dark mode or branding -->
+          <div
+            class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 to-transparent"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gray-900 dark:bg-black py-12 text-gray-300 dark:text-gray-400 mt-auto"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">
+              Download Our App
+            </h3>
+            <p class="text-sm mb-4">
+              Download Our App From Play Store & App Store.
+            </p>
+            <div class="flex space-x-3">
+              <img
+                src="images/play-store.png"
+                alt="Google Play Store"
+                class="h-10 cursor-pointer hover:opacity-80 transition duration-300"
+              />
+              <img
+                src="images/app-store.png"
+                alt="Apple App Store"
+                class="h-10 cursor-pointer hover:opacity-80 transition duration-300"
+              />
+            </div>
+          </div>
+
+          <div class="col-span-2 md:col-span-1">
+            <img
+              src="images/logo-white.png"
+              alt="Shopcart White Logo"
+              class="h-10 mb-4"
+            />
+            <p class="text-sm max-w-xs">
+              Our purpose is to sustainably make the pleasure and benefits of
+              sports accessible to the many.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Useful Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Coupons</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Blog Post</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-primary-red transition duration-300"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Social Media</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Josh Talks</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary-red transition duration-300"
+                  >Dailyhunt</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 dark:border-gray-800 my-8" />
+
+        <div class="text-center text-sm">
+          <p class="flex items-center justify-center">
+            &copy; <span class="font-bold mr-1">RedStore</span> | Design &
+            Developed By Aditya Mishra
+            <img
+              class="h-5 w-5 ml-2 filter dark:invert"
+              src="images/adilogo.png"
+              alt="Aditya's Logo"
+            />
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // --- Mobile Menu Toggle Script ---
+      const menuToggle = document.getElementById("toggleMenu");
+      const menuItems = document.getElementById("Menuitem");
+
+      let isMenuOpen = false;
+
+      menuToggle.addEventListener("click", () => {
+        if (isMenuOpen) {
+          menuItems.style.maxHeight = "0px";
+          isMenuOpen = false;
+        } else {
+          menuItems.style.maxHeight = menuItems.scrollHeight + "px";
+          isMenuOpen = true;
+        }
+      });
+
+      // --- Dark Mode Toggle Script ---
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const htmlElement = document.documentElement;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.add("dark");
+        htmlElement.classList.remove("light");
+      } else {
+        htmlElement.classList.add("light");
+        htmlElement.classList.remove("dark");
+      }
+
+      darkModeToggle.addEventListener("click", () => {
+        if (htmlElement.classList.contains("dark")) {
+          htmlElement.classList.remove("dark");
+          htmlElement.classList.add("light");
+          localStorage.theme = "light";
+        } else {
+          htmlElement.classList.add("dark");
+          htmlElement.classList.remove("light");
+          localStorage.theme = "dark";
+        }
+      });
+    </script>
+  </body>
+</html>
