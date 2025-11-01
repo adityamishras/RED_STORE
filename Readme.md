@@ -1,66 +1,71 @@
-# E-commerce Website
+# 🛒 E-Commerce Starter Kit
+> A full-featured, responsive e-commerce front-end application with multi-mode (Light/Dark) support.
 
-An e-commerce website built with HTML, CSS, and JavaScript. This project is designed to provide a simple and effective online shopping experience.
+---
 
-## links
+## 🖼️ Application Screenshots & Demo
 
-- [Visit here](https://adityamishras.github.io/RedStore/)
+All screenshots are stored in the `./screenshots/` folder and show the application's design and functionality in both light and dark themes.
 
-## Screenshots
+### ☀️ Main Views (Light Mode)
 
-![screenshots_1](https://github.com/adityamishras/Ecommerce_1/assets/136791974/f2519b5c-d7bb-4778-b2c7-b8378200b235)
-![Screenshot_2](https://github.com/adityamishras/Ecommerce_1/assets/136791974/3c34842a-bc04-44f2-b270-fc9cfb2bf9ed)
-![Screenshot_1](https://github.com/adityamishras/Ecommerce_1/assets/136791974/5def3291-41ee-4abf-80f5-9eb83a033e73)
+#### Home Page
+The primary landing page featuring a product carousel and quick navigation links.  
+![Home Page Screenshot](./screenshots/Home.png)
 
-## HTML
+#### Product Listing
+Displays the complete catalog with filtering options for users to browse items.  
+![Product Page Screenshot](./screenshots/Product.png)
 
-```html
-<div class="single_product_container container text-center">
-  <div class="row">
-    <div class="col">
-      <img src="images/gallery-1.jpg" alt="" height="800px" id="mainimage" />
-      <div class="small_image_container">
-        <ul>
-          <li>
-            <img src="images/gallery-1.jpg" alt="" class="smallimg" />
-          </li>
-          <li>
-            <img src="images/gallery-2.jpg" alt="" class="smallimg" />
-          </li>
-          <li>
-            <img src="images/gallery-3.jpg" alt="" class="smallimg" />
-          </li>
-          <li>
-            <img src="images/gallery-4.jpg" alt="" class="smallimg" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-```
+#### Product Detail
+Detailed view for a single item, including images, specifications, and 'Add to Cart' functionality.  
+![Product Detail Screenshot](./screenshots/ProductDetail.png)
 
-##JavaScript
+#### Authentication
+Secure screens for user registration and sign-in.  
+![Login Screen Screenshot](./screenshots/Login.png)  
+![Signup Screen Screenshot](./screenshots/Signup.png)
 
-```javascript
-<script>
-      let mainimage = document.getElementById("mainimage");
-      let smallimg = document.getElementsByClassName("smallimg");
-      smallimg[0].onclick = function () {
-        mainimage.src = smallimg[0].src;
-      };
-      smallimg[1].onclick = function () {
-        mainimage.src = smallimg[1].src;
-      };
+#### Information Pages
+Standard pages containing essential details about the company and contact methods.  
+![About Page Screenshot](./screenshots/About.png)  
+![Contact Page Screenshot](./screenshots/Contact.png)
 
-      smallimg[2].onclick = function () {
-        mainimage.src = smallimg[2].src;
-      };
-      smallimg[3].onclick = function () {
-        mainimage.src = smallimg[3].src;
-      };
-    </script>
-```
-## output
+---
 
-https://github.com/adityamishras/Ecommerce_1/assets/136791974/60b329b6-1c2e-4f1f-a270-27a9606916a4
+### 🌑 Dark Mode (Theming Demo)
+
+#### Home Page (Dark)
+![Dark Mode Home Screenshot](./screenshots/ModeHome.png)
+
+#### Product Listing (Dark)
+![Dark Mode Product Screenshot](./screenshots/ModeProduct.png)
+
+#### Signup Screen (Dark)
+![Dark Mode Signup Screenshot](./screenshots/ModeSignup.png)
+
+#### Contact Page (Dark)
+![Dark Mode Contact Screenshot](./screenshots/ModeContact.png)
+
+---
+
+## 🛠️ Installation and Run
+
+1. **Clone the repository:**
+    ```bash
+    git clone "https://github.com/adityamishras/RED_STORE"
+    ```
+2. **Navigate to the project directory:**
+    ```bash
+    cd RED_STORE
+    ```
+3. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4. **Start the application:**
+    ```bash
+    npm start
+    ```
+
+---
