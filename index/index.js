@@ -27,40 +27,39 @@ tailwind.config = {
   },
 };
 
+// --- Mobile Menu Toggle Script ---
+const menuToggle = document.getElementById("toggleMenu");
+const menuItems = document.getElementById("Menuitem");
 
-      // --- Mobile Menu Toggle Script ---
-      const menuToggle = document.getElementById("toggleMenu");
-      const menuItems = document.getElementById("Menuitem");
+menuToggle.addEventListener("click", () => {
+  menuItems.classList.toggle("hidden");
+});
 
-      menuToggle.addEventListener("click", () => {
-        menuItems.classList.toggle("hidden");
-      });
+// --- Dark Mode Toggle Script ---
+const darkModeToggle = document.getElementById("darkModeToggle");
+const htmlElement = document.documentElement;
 
-      // --- Dark Mode Toggle Script ---
-      const darkModeToggle = document.getElementById("darkModeToggle");
-      const htmlElement = document.documentElement;
+// On page load or when changing the theme, best to add inline in `head` to avoid FOUC
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  htmlElement.classList.add("dark");
+  htmlElement.classList.remove("light");
+} else {
+  htmlElement.classList.add("light");
+  htmlElement.classList.remove("dark");
+}
 
-      // On page load or when changing the theme, best to add inline in `head` to avoid FOUC
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        htmlElement.classList.add("dark");
-        htmlElement.classList.remove("light");
-      } else {
-        htmlElement.classList.add("light");
-        htmlElement.classList.remove("dark");
-      }
-
-      darkModeToggle.addEventListener("click", () => {
-        if (htmlElement.classList.contains("dark")) {
-          htmlElement.classList.remove("dark");
-          htmlElement.classList.add("light");
-          localStorage.theme = "light";
-        } else {
-          htmlElement.classList.add("dark");
-          htmlElement.classList.remove("light");
-          localStorage.theme = "dark";
-        }
-      });
+darkModeToggle.addEventListener("click", () => {
+  if (htmlElement.classList.contains("dark")) {
+    htmlElement.classList.remove("dark");
+    htmlElement.classList.add("light");
+    localStorage.theme = "light";
+  } else {
+    htmlElement.classList.add("dark");
+    htmlElement.classList.remove("light");
+    localStorage.theme = "dark";
+  }
+});

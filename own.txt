@@ -2,8 +2,8 @@ Edited page
 1. index.html T
 2. about T
 3. cart T
-4. contact
-5. login
-6. product_details
-7. product
-8. signup
+4. contact T
+5. login  T
+6. product_details T
+7. product T
+8. signup T

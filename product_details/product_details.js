@@ -26,6 +26,7 @@ tailwind.config = {
 const menuToggle = document.getElementById("toggleMenu");
 const menuItems = document.getElementById("Menuitem");
 
+// Initial check for mobile menu state
 let isMenuOpen = false;
 
 menuToggle.addEventListener("click", () => {
@@ -63,5 +64,31 @@ darkModeToggle.addEventListener("click", () => {
     htmlElement.classList.add("dark");
     htmlElement.classList.remove("light");
     localStorage.theme = "dark";
+  }
+});
+
+// --- Product Image Gallery Script ---
+const mainimage = document.getElementById("mainimage");
+const smallimgs = document.getElementsByClassName("smallimg");
+
+Array.from(smallimgs).forEach((img, index) => {
+  img.onclick = function () {
+    // Change the main image source
+    mainimage.src = img.src;
+
+    // Update border to show which image is currently selected
+    Array.from(smallimgs).forEach((i) =>
+      i.classList.remove("border-primary-red", "border-transparent")
+    );
+
+    // Add red border to the clicked image
+    img.classList.add("border-primary-red");
+  };
+
+  // Set the initial border for the first image
+  if (index === 0) {
+    img.classList.add("border-primary-red");
+  } else {
+    img.classList.add("border-transparent");
   }
 });

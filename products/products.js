@@ -22,10 +22,11 @@ tailwind.config = {
   },
 };
 
-// --- Mobile Menu Toggle Script ---
+// --- Mobile Menu Toggle Script (Adapted for Tailwind) ---
 const menuToggle = document.getElementById("toggleMenu");
 const menuItems = document.getElementById("Menuitem");
 
+// Initial check for mobile menu state (matches the style tag)
 let isMenuOpen = false;
 
 menuToggle.addEventListener("click", () => {
@@ -33,6 +34,7 @@ menuToggle.addEventListener("click", () => {
     menuItems.style.maxHeight = "0px";
     isMenuOpen = false;
   } else {
+    // Set to a value larger than the content height
     menuItems.style.maxHeight = menuItems.scrollHeight + "px";
     isMenuOpen = true;
   }
@@ -42,6 +44,7 @@ menuToggle.addEventListener("click", () => {
 const darkModeToggle = document.getElementById("darkModeToggle");
 const htmlElement = document.documentElement;
 
+// On page load or when changing the theme, best to add inline in `head` to avoid FOUC
 if (
   localStorage.theme === "dark" ||
   (!("theme" in localStorage) &&
